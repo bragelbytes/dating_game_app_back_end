@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('api/users', views.UserList.as_view(), name='user_list'),
-    path('api/contacts/<int:pk>', views.UserDetail.as_view(), name='user_detail')
+    path('api/users/<int:pk>', views.UserDetail.as_view(), name='user_detail')
 ]
