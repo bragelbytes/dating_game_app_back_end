@@ -86,6 +86,7 @@ WSGI_APPLICATION = 'dating_game_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django_postgres_extensions.backends.postgresql',
         'NAME': 'pixels_api',
         'USER': '',
         'PASSWORD': '',
