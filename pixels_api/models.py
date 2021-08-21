@@ -6,11 +6,11 @@ class Games(models.Model):
     image = models.URLField()
     genre = models.CharField(max_length=32)
 
-class User(models.Model):
-    username = models.CharField(max_length=32)
-    password = models.CharField(max_length=32)
-    image = models.URLField()
-    name = models.CharField(max_length=32)
-    age = models.CharField(max_length=32)
-    fav_console = models.CharField(max_length=32)
-    fav_games = models.ManyToManyField(Games)
+class UserAccount(models.Model):
+    username = models.CharField(max_length=75, unique=True)
+    password = models.CharField(max_length=1000)
+    image = models.URLField(blank=True)
+    name = models.CharField(max_length=32,blank=True)
+    age = models.CharField(max_length=32,blank=True)
+    fav_console = models.CharField(max_length=32,blank=True)
+    fav_games = models.ManyToManyField(Games,blank=True)
