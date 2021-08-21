@@ -11,6 +11,8 @@ from django.http import JsonResponse
 
 import json
 
+
+
 # Create your views here.
 #User views=================
 class UserList(generics.ListCreateAPIView):
