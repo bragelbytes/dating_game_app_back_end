@@ -14,3 +14,7 @@ class UserAccount(models.Model):
     age = models.CharField(max_length=32,blank=True)
     fav_console = models.CharField(max_length=32,blank=True)
     fav_games = models.ManyToManyField(Games,blank=True)
+
+    # Many to many, Users with Users
+    # https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ManyToManyField.symmetrical
+    users_liked = models.ManyToManyField("self", symmetrical=False, blank=True)
