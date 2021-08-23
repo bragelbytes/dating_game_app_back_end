@@ -21,6 +21,12 @@ class UserAccountSerializer(serializers.ModelSerializer):
     ### THIS MAKES SURE THEIR UPDATED PASSWORDS ARE ALSO HASHED
     def update(self, instance, validated_data):
         user = UserAccount.objects.get(username=validated_data['username'])
+        print(user)
+        # updating our user information!
+        user.age =  validated_data['age']
+        user.name = validated_data['name']
+        user.image =  validated_data['image']
+        user.fav_console =  validated_data['fav_console']
         user.password = make_password(validated_data['password'])
         user.save()
         return user
