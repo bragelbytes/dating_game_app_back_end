@@ -7,7 +7,7 @@ from django.contrib.auth.hashers import make_password, check_password
 class UserAccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAccount
-        fields = ('id', 'username', 'password', 'image', 'name', 'age', 'fav_console', 'fav_games',)
+        fields = ('id', 'username', 'password', 'image', 'name', 'age', 'location', 'fav_console', 'fav_games',)
 
     ### THIS HASHES A NEW USERS PASSWORD WHEN THEY CREATE AN ACCOUNT
     def create(self, validated_data):
@@ -24,6 +24,7 @@ class UserAccountSerializer(serializers.ModelSerializer):
         print(user)
         # updating our user information!
         user.age =  validated_data['age']
+        user.location = validated_data['location']
         user.name = validated_data['name']
         user.image =  validated_data['image']
         user.fav_console =  validated_data['fav_console']
@@ -34,4 +35,4 @@ class UserAccountSerializer(serializers.ModelSerializer):
 class GamesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Games
-        fields = ('name', 'image', 'genre')
+        fields = ('id', 'name', 'image', 'genre')
