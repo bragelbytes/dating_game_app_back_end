@@ -11,8 +11,6 @@ from django.http import JsonResponse
 
 import json
 
-
-
 # Create your views here.
 #User views=================
 class UserList(generics.ListCreateAPIView):
@@ -28,15 +26,14 @@ def check_login(request):
         return JsonResponse({})
 
     if request.method=="PUT":
-        
+
         jsonRequest = json.loads(request.body)
         username = jsonRequest['username']
         password = jsonRequest['password']
         if UserAccount.objects.get(username=username):
             user = UserAccount.objects.get(username=username)
             if check_password(password, user.password):
-                return JsonResponse({'id': user.id, 'username': user.username,'age': user.age,'name': user.name,'fav_console': user.fav_console, 'image': user.image, 'password': user.password})
-
+                return JsonResponse({'id': user.id, 'username': user.username,'age': user.age,'location': user.location, 'name': user.name,'fav_console': user.fav_console, 'image': user.image,'password': user.password})
             else:
                 return JsonResponse({})
         else:
