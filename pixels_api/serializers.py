@@ -34,4 +34,4 @@ class UserAccountSerializer(serializers.ModelSerializer):
 class GamesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Games
-        fields = ('name', 'image', 'genre')
+        fields = ('id', 'name', 'image', 'genre')
