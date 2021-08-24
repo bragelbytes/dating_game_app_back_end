@@ -3,8 +3,6 @@ from . import views
 
 from django.views.decorators.csrf import csrf_exempt
 
-
-
 urlpatterns = [
     #user path=====
     path('api/useraccount', views.UserList.as_view(), name='user_list'),
