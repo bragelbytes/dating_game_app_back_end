@@ -12,6 +12,7 @@ class UserAccount(models.Model):
     image = models.URLField(blank=True)
     name = models.CharField(max_length=32,blank=True)
     age = models.CharField(max_length=32,blank=True)
+    location = models.CharField(max_length=32, blank=True)
     fav_console = models.CharField(max_length=32,blank=True)
     fav_games = models.ManyToManyField(Games,blank=True)
 
