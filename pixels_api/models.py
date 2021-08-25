@@ -18,4 +18,4 @@ class UserAccount(models.Model):
 
     # Many to many, Users with Users
     # https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ManyToManyField.symmetrical
-    # users_liked = models.ManyToManyField("self", symmetrical=False, blank=True)
+    users_liked = models.ManyToManyField("self", symmetrical=False, blank=True)

@@ -7,7 +7,7 @@ from django.contrib.auth.hashers import make_password, check_password
 class UserAccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAccount
-        fields = ('id', 'username', 'password', 'image', 'name', 'age', 'fav_console', 'fav_games',)
+        fields = ('id', 'username', 'password', 'image', 'name', 'age', 'fav_console', 'fav_games', 'users_liked')
 
     ### THIS HASHES A NEW USERS PASSWORD WHEN THEY CREATE AN ACCOUNT
     def create(self, validated_data):
