@@ -11,5 +11,4 @@ urlpatterns = [
     #games path
     path('api/games', views.GamesList.as_view(), name='games_list'),
     path('api/games/<int:pk>', views.GamesDetail.as_view(), name='games_detail')
-
 ]
